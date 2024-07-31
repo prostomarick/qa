@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   <title>Super Marat</title>
+   <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="./image/favicon__mario.png" type="image/png">
+   <link rel="stylesheet" href="css/resetStyle.css">
+   <link rel="stylesheet" href="css/style.css?_v=1">
+   <style>
+      /* Основные стили для темной темы */
+      body {
+         background-color: #2e2e2e;
+         color: #ddd;
+         font-family: Arial, sans-serif;
+      }
+      .wrapper {
+         position: relative;
+      }
+      .main {
+         position: relative;
+      }
+      /* Верхнее меню */
+      .top-menu {
+         position: fixed;
+         top: 0;
+         width: 100%;
+         background-color: #1e1e1e;
+         color: #ddd;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 10px 20px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         z-index: 1000;
+      }
+      .top-menu a {
+         color: #ddd;
+         text-decoration: none;
+         padding: 0 15px;
+      }
+      .top-menu a:hover {
+         color: #f0a500;
+      }
+      .top-menu .search input {
+         padding: 5px;
+         border: none;
+         border-radius: 4px;
+         outline: none;
+      }
+      /* Основные стили для модального окна и входа */
+      .modal {
+         display: none;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(0, 0, 0, 0.5);
+         justify-content: center;
+         align-items: center;
+      }
+      .modal-content {
+         background: #333;
+         padding: 20px;
+         border-radius: 8px;
+         text-align: center;
+         max-width: 400px;
+         width: 100%;
+         color: #ddd;
+      }
+      .modal-content input {
+         margin: 10px 0;
+         padding: 10px;
+         width: 80%;
+         border: 1px solid #555;
+         border-radius: 4px;
+         background: #222;
+         color: #ddd;
+      }
+      .modal-content button {
+         padding: 10px 20px;
+         border: none;
+         background: #007bff;
+         color: #fff;
+         border-radius: 5px;
+         cursor: pointer;
+      }
+      .modal-content button:hover {
+         background: #0056b3;
+      }
+      .time {
+         font-size: 20px;
+         margin: 20px;
+         color: #ddd;
+         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      /* Эффект для загрузки */
+      .fade-in {
+         animation: fadeIn 2s ease-in;
+      }
+      @keyframes fadeIn {
+         from { opacity: 0; }
+         to { opacity: 1; }
+      }
+      /* Анимация прыжка */
+      @keyframes jump {
+         0% { transform: translateY(0); }
+         50% { transform: translateY(-150px); }
+         100% { transform: translateY(0); }
+      }
+      .mario-img.jump {
+         animation: jump 0.5s ease;
+      }
+      /* Стили для кнопки с отзывами */
+      .feedback-btn {
+         padding: 10px 20px;
+         border: none;
+         background: #28a745;
+         color: #fff;
+         border-radius: 5px;
+         cursor: pointer;
+         font-size: 16px;
+      }
+      .feedback-btn:hover {
+         background: #218838;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="top-menu">
+      <a href="#">Главное</a>
+      <div class="search">
+         <input type="text" placeholder="Поиск...">
+      </div>
+   </div>
+
+   <div class="wrapper fade-in">
+      <main class="main">
+         <img class="cloud_1" src="./image/cloud.png" alt="Облако">
+         <img class="cloud_2" src="./image/cloud.png" alt="Облако">
+         <img class="cloud_3" src="./image/cloud.png" alt="Облако">
+         <img class="cloud_4" src="./image/cloud.png" alt="Облако">
+         <img class="shelf" src="./image/shelf.jpg" alt="Полка на которой стоит Mario">
+         <div class="mario duble_jump">
+            <img class="mario-img" src="./image/mario.png" alt="Марио">
+         </div>
+         <img class="green__pipe" src="./image/green__pipe.png" alt="Зеленая труба">
+         <div class="floor">
+            <img class="floor-img" src="./image/floor.jpg" alt="Пол из камней">
+         </div>
+
+         <audio src="./audio/super-mario.mp3" preload></audio>
+         <div class="container">
+            <section class="data">
+               <div class="foto">
+                  <div class="foto__frame">
+                     <img src="./image/foto__frame.jpg" alt="Рамка для фотографии из камней">
+                  </div>
+                  <div class="foto__foto">
+                     <img src="./image/foto.jpg" alt="Фотография">
+                  </div>
+               </div>
+               <div class="text">
+                  <div class="name">
+                     <div>Marat</div>
+                     <div>Rahmatullin</div>
+                  </div>
+                  <div>
+                     <div class="list"><span>age</span><span>:</span><span>25</span></div>
+                     <div class="list"><span>work</span><span>:</span><span>qa-engineer</span></div>
+                     <div class="list"><span>Power</span><span>:</span><span>Life</span></div>
+                     <div class="list"><span>location</span><span>:</span><span>UFA</span></div>
+                  </div>
+               </div>
+            </section>
+            <section class="links">
+               <div class="link"><a href="https://t.me/rahmatullin_m">Telegram</a></div>
+               <div class="link"><a href="mailto:rahmatullinm@yandex.ru">Email</a></div>
+               <div class="link"><button class="feedback-btn">Оставить отзыв</button></div>
+               <div class="link"><button id="jump-btn">Прыжок Марио</button></div>
+            </section>
+            <div class="time" id="current-time"></div>
+         </div>
+      </main>
+   </div>
+
+   <div id="login-modal" class="modal">
+      <div class="modal-content">
+         <h2>Вход</h2>
+         <input type="text" id="username" placeholder="Логин">
+         <input type="password" id="password" placeholder="Пароль">
+         <button onclick="login()">Войти</button>
+         <button onclick="closeModal()">Закрыть</button>
+      </div>
+   </div>
+
+   <script src="js/script.js"></script>
+   <script>
+      // Функция отображения текущего времени
+      function displayTime() {
+         const now = new Date();
+         const hours = String(now.getHours()).padStart(2, '0');
+         const minutes = String(now.getMinutes()).padStart(2, '0');
+         const seconds = String(now.getSeconds()).padStart(2, '0');
+         document.getElementById('current-time').innerText = `${hours}:${minutes}:${seconds}`;
+      }
+
+      // Функция отображения модального окна
+      function showModal() {
+         document.getElementById('login-modal').style.display = 'flex';
+      }
+
+      // Функция закрытия модального окна
+      function closeModal() {
+         document.getElementById('login-modal').style.display = 'none';
+      }
+
+      // Функция для проверки логина
+      function login() {
+         const username = document.getElementById('username').value;
+         const password = document.getElementById('password').value;
+         // Здесь можно добавить проверку логина
+         alert('Вход выполнен');
+         closeModal();
+      }
+
+      // Функция для прыжка Марио
+      function makeMarioJump() {
+         const
